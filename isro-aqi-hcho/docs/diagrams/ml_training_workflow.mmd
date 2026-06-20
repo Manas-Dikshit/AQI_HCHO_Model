@@ -1,0 +1,32 @@
+flowchart TD
+  subgraph DataSources
+    S5[TROPOMI]
+    INS[INSAT-3D]
+    ERA[ERA5]
+    FIR[FIRMS]
+    CPC[CPCB]
+  end
+
+  S5 --> DL[Downloaders & Collectors: src/data/*_download*.py]
+  INS --> DL
+  ERA --> DL
+  FIR --> DL
+  CPC --> DL
+
+  DL --> FE[Feature Engineering: build_dataset_aqi.py / build_dataset_hcho.py]
+  FE --> STORE[data/processed/*.csv / netCDF]
+  STORE --> SEQ[Sequence generation: sliding-window, context features]
+  SEQ --> TRAIN[Train Pipeline: src/models/train_aqi.py]
+  TRAIN --> CKPT[Saved checkpoint — .pt]
+  TRAIN --> EVAL[Evaluation & metrics]
+  EVAL --> EXPORT[Export predictions, GeoJSON, netCDF]
+  EXPORT --> DASH[Dashboard & Visualization: src/webapp/app.py]
+  STORE --> DASH
+
+  subgraph Automation
+    PIPE[Orchestrator: scripts/run_pipeline.py]
+  end
+
+  PIPE --> DL
+  PIPE --> FE
+  PIPE --> TRAIN

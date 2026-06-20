@@ -1,0 +1,31 @@
+flowchart LR
+  subgraph Inputs
+    TROP[TROPOMI — NO2/HCHO/O3/CO/SO2]
+    INS[INSAT-3D — AOD]
+    ERA[ERA5 — T/RH/U10/V10/BLH/TP]
+    FIR[FIRMS — fire_count]
+    CPC[CPCB — ground PM2.5]
+  end
+
+  TROP --> Preproc[Preprocessing & Grid Aggregation: build_dataset_aqi.py / build_dataset_hcho.py]
+  INS --> Preproc
+  ERA --> Preproc
+  FIR --> Preproc
+  CPC --> Preproc
+
+  Preproc --> Seq[Sequence Builder: sliding window of T days per cell]
+  Seq --> Conv[Spatial Encoder: Time-distributed Conv layers / shared CNN]
+  Conv --> TD[Time-distributed Features: Flatten/pooling per timestep]
+  TD --> LSTM[LSTM/GRU: temporal fusion across T timesteps]
+  LSTM --> Dense[Fully-connected layers]
+  Dense --> PM25[PM2.5 Prediction]
+  PM25 --> AQI[AQI Conversion & Postprocessing]
+  AQI --> Output[Gridded AQI map / per-cell predictions]
+
+  subgraph ModelArtifacts
+    CKPT[Model checkpoint — .pt / .ckpt]
+    METR[Metrics & eval reports]
+  end
+
+  Dense --> CKPT
+  Dense --> METR
