@@ -1,0 +1,38 @@
+{
+  "RandomForest": {
+    "pm25_target": {
+      "model": "RandomForest",
+      "target": "pm25_target",
+      "rmse": 1.546,
+      "mae": 0.885,
+      "r2": 0.9815,
+      "pearson_r": 0.9911
+    },
+    "aqi_target": {
+      "model": "RandomForest",
+      "target": "aqi_target",
+      "rmse": 15.4,
+      "mae": 12.004,
+      "r2": 0.1346,
+      "pearson_r": 0.4574
+    }
+  },
+  "GradientBoosting": {
+    "pm25_target": {
+      "model": "GradientBoosting",
+      "target": "pm25_target",
+      "rmse": 2.817,
+      "mae": 1.67,
+      "r2": 0.9387,
+      "pearson_r": 0.9689
+    },
+    "aqi_target": {
+      "model": "GradientBoosting",
+      "target": "aqi_target",
+      "rmse": 15.798,
+      "mae": 12.343,
+      "r2": 0.0893,
+      "pearson_r": 0.3461
+    }
+  }
+}
