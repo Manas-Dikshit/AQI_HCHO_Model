@@ -57,6 +57,12 @@ __pycache__/
 
 data/raw/
 artifacts/
+.venv/
+**/logs/
+**/data/processed/
+**/models/baseline/
+**/predicted_aqi_grids/
+**/*.tif
 
 # credentials
 .env
