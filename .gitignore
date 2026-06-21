@@ -57,3 +57,6 @@ __pycache__/
 
 data/raw/
 artifacts/
+
+.env
+.cdsapirc
