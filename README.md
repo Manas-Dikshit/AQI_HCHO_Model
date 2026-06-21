@@ -188,15 +188,49 @@ isro-aqi-hcho/
 
 ## Installation
 
-### Option A — pip (recommended on Replit or plain Python ≥ 3.11)
+Follow these steps if you have just cloned the repository and want to run it locally from scratch.
+
+### Option A — Standard Python Virtual Environment (Recommended)
+
+**1. Navigate to the core project directory:**
+```bash
+cd isro-aqi-hcho
+```
+
+**2. Create a virtual environment:**
+```bash
+# Windows
+python -m venv venv
+
+# macOS / Linux
+python3 -m venv venv
+```
+
+**3. Activate the virtual environment:**
+```bash
+# Windows
+.\venv\Scripts\activate
+
+# macOS / Linux
+source venv/bin/activate
+```
+
+**4. Install dependencies:**
 ```bash
 pip install -r requirements.txt
 ```
 
 ### Option B — conda
 ```bash
+cd isro-aqi-hcho
 conda env create -f env_example.yml
 conda activate isro-aqi-hcho
+```
+
+### Option C — uv (Fastest)
+```bash
+# If you have uv installed (from the root directory):
+uv sync
 ```
 
 ### API credentials
