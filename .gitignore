@@ -58,5 +58,6 @@ __pycache__/
 data/raw/
 artifacts/
 
+# credentials
 .env
 .cdsapirc
