@@ -1,0 +1,300 @@
+# Instincts generated from https://github.com/Manas-Dikshit/AQI_HCHO_Model
+# Generated: 2026-06-30T20:12:36.366Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: AQI_HCHO_Model-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Manas-Dikshit/AQI_HCHO_Model
+---
+
+# AQI_HCHO_Model Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: docs, feat, style
+
+## Evidence
+
+- 4 commits analyzed
+- Detected conventional commit pattern
+- Examples: docs: add related open-source repositories and methodologies documentation, feat: render interactive map in wide column with container_width
+
+---
+id: AQI_HCHO_Model-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Manas-Dikshit/AQI_HCHO_Model
+---
+
+# AQI_HCHO_Model Commit Length
+
+## Action
+
+Write moderate-length commit messages (~69 characters)
+
+## Evidence
+
+- Average commit message length: 69 chars
+- Based on 4 commits
+
+---
+id: AQI_HCHO_Model-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Manas-Dikshit/AQI_HCHO_Model
+---
+
+# AQI_HCHO_Model Naming Files
+
+## Action
+
+Use snake_case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: snake_case
+
+---
+id: AQI_HCHO_Model-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Manas-Dikshit/AQI_HCHO_Model
+---
+
+# AQI_HCHO_Model Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: AQI_HCHO_Model-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Manas-Dikshit/AQI_HCHO_Model
+---
+
+# AQI_HCHO_Model Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: AQI_HCHO_Model-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/Manas-Dikshit/AQI_HCHO_Model
+---
+
+# AQI_HCHO_Model Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: aqi_hcho_model-instinct-file-naming
+trigger: "When creating a new source file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Manas-Dikshit/AQI_HCHO_Model
+---
+
+# Aqi_hcho_model Instinct File Naming
+
+## Action
+
+Name the file using snake_case
+
+## Evidence
+
+- Pattern in namingConventions.files
+
+---
+id: aqi_hcho_model-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Manas-Dikshit/AQI_HCHO_Model
+---
+
+# Aqi_hcho_model Instinct Function Naming
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Pattern in namingConventions.functions
+
+---
+id: aqi_hcho_model-instinct-class-naming
+trigger: "When defining a new class"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Manas-Dikshit/AQI_HCHO_Model
+---
+
+# Aqi_hcho_model Instinct Class Naming
+
+## Action
+
+Name the class using PascalCase
+
+## Evidence
+
+- Pattern in namingConventions.classes
+
+---
+id: aqi_hcho_model-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Manas-Dikshit/AQI_HCHO_Model
+---
+
+# Aqi_hcho_model Instinct Constant Naming
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE
+
+## Evidence
+
+- Pattern in namingConventions.constants
+
+---
+id: aqi_hcho_model-instinct-import-style
+trigger: "When importing modules within the package"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Manas-Dikshit/AQI_HCHO_Model
+---
+
+# Aqi_hcho_model Instinct Import Style
+
+## Action
+
+Use relative imports
+
+## Evidence
+
+- Pattern in importStyle
+
+---
+id: aqi_hcho_model-instinct-export-style
+trigger: "When exporting functions or classes"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Manas-Dikshit/AQI_HCHO_Model
+---
+
+# Aqi_hcho_model Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in exportStyle
+
+---
+id: aqi_hcho_model-instinct-commit-format
+trigger: "When making a git commit"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: Manas-Dikshit/AQI_HCHO_Model
+---
+
+# Aqi_hcho_model Instinct Commit Format
+
+## Action
+
+Format the commit message as <type>: <description>, where type is one of 'docs', 'feat', or 'style'
+
+## Evidence
+
+- docs: add related open-source repositories and methodologies documentation
+- feat: render interactive map in wide column with container_width
+- style: increase map marker sizes, add borders, reorder layers
+
+---
+id: aqi_hcho_model-instinct-commit-length
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: Manas-Dikshit/AQI_HCHO_Model
+---
+
+# Aqi_hcho_model Instinct Commit Length
+
+## Action
+
+Keep the commit message concise, around 69 characters on average
+
+## Evidence
+
+- averageLength: 69
+
+---
+id: aqi_hcho_model-instinct-test-location
+trigger: "When adding or updating tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: Manas-Dikshit/AQI_HCHO_Model
+---
+
+# Aqi_hcho_model Instinct Test Location
+
+## Action
+
+Place test files in a separate directory from source code
+
+## Evidence
+
+- testLocation: separate
+
