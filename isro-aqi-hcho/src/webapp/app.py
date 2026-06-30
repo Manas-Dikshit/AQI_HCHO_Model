@@ -516,15 +516,15 @@ elif page == "AQI Maps":
                             continue
                         folium.CircleMarker(
                             location=[r["lat"], r["lon"]],
-                            radius=3,
-                            color=aqi_color(aqi),
+                            radius=7,
+                            weight=1,
+                            color="#333333",
                             fill=True,
                             fillColor=aqi_color(aqi),
-                            fillOpacity=0.8,
+                            fillOpacity=0.9,
                             popup=f"AQI: {aqi:.0f}",
+                            tooltip=f"AQI {aqi:.0f}",
                         ).add_to(fg_aqi)
-
-                    fg_aqi.add_to(m)
 
                     # HCHO hotspots overlay (seasonal threshold)
                     if hcho_df is not None:
@@ -542,15 +542,16 @@ elif page == "AQI Maps":
                             for _, hr in hotspots.iterrows():
                                 folium.CircleMarker(
                                     location=[hr["lat"], hr["lon"]],
-                                    radius=6,
+                                    radius=11,
                                     color="blue",
-                                    fill=True,
-                                    fillColor="blue",
-                                    fillOpacity=0.4,
+                                    weight=2,
+                                    fill=False,
                                     popup=f"HCHO: {hr['hcho_column']:.2e}",
                                 ).add_to(fg_h)
                             fg_h.add_to(m)
 
+                    # AQI points added last so every surface point sits on top
+                    fg_aqi.add_to(m)
                     folium.LayerControl().add_to(m)
                     # Defer rendering to the wide column (col_ctrl2) for full width
                     _interactive_map = m
