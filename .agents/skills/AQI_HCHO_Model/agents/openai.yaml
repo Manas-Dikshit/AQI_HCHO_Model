@@ -1,0 +1,6 @@
+interface:
+  display_name: "AQI HCHO Model"
+  short_description: "Repo-specific patterns and workflows for AQI_HCHO_Model"
+  default_prompt: "Use the AQI_HCHO_Model repo skill to follow existing architecture, testing, and workflow conventions."
+policy:
+  allow_implicit_invocation: true
