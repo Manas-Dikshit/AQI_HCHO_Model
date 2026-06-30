@@ -3,6 +3,9 @@
     <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="#555"/>
     </marker>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#888"/>
+    </marker>
     <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="#2563EB"/>
     </marker>
@@ -125,7 +128,7 @@
   <text x="890" y="373" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#64748B" text-anchor="middle">DBSCAN · Wind transport</text>
 
   <!-- Arrow AQI Dataset → Feature Eng -->
-  <path d="M 760 247 L 775 247" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M 760 247 L 775 247" stroke="#888" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
 
   <!-- ==================== ARROWS: Processing → Models ==================== -->
   <path d="M 1000 227 L 1060 227" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
