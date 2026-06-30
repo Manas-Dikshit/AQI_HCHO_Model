@@ -1,0 +1,214 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#888"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563EB"/>
+    </marker>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1E3A5F;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#2563EB;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="sourcesGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F0F9FF;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#E0F2FE;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="processGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F0FDF4;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#DCFCE7;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="modelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FEFCE8;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#FEF9C3;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="outputGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF7ED;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#FFEDD5;stop-opacity:1"/>
+    </linearGradient>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#00000022"/>
+    </filter>
+    <filter id="shadowLg" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="2" dy="3" stdDeviation="4" flood-color="#00000020"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#FFFFFF"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="1920" height="72" fill="url(#headerGrad)"/>
+  <text x="960" y="46" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">Surface AQI Prediction &amp; HCHO Hotspot Detection — System Architecture</text>
+
+  <!-- ==================== SECTION LABELS ==================== -->
+  <text x="60" y="115" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" fill="#1E3A5F">① Data Sources</text>
+  <line x1="60" y1="122" x2="280" y2="122" stroke="#2563EB" stroke-width="2"/>
+
+  <text x="555" y="115" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" fill="#1E3A5F">② Processing &amp; Feature Engineering</text>
+  <line x1="555" y1="122" x2="1000" y2="122" stroke="#2563EB" stroke-width="2"/>
+
+  <text x="1060" y="115" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" fill="#1E3A5F">③ Models</text>
+  <line x1="1060" y1="122" x2="1260" y2="122" stroke="#2563EB" stroke-width="2"/>
+
+  <text x="1400" y="115" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" fill="#1E3A5F">④ Output &amp; Dashboard</text>
+  <line x1="1400" y1="122" x2="1760" y2="122" stroke="#2563EB" stroke-width="2"/>
+
+  <!-- ==================== ROW 1: DATA SOURCES ==================== -->
+  <!-- CPCB -->
+  <rect x="40" y="140" width="195" height="80" rx="8" fill="url(#sourcesGrad)" stroke="#0284C7" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="137" y="170" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#075985" text-anchor="middle">CPCB CAAQM</text>
+  <text x="137" y="190" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#0EA5E9" text-anchor="middle">Ground Stations</text>
+  <text x="137" y="208" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#64748B" text-anchor="middle">PM2.5, PM10, NO₂, SO₂</text>
+
+  <!-- TROPOMI -->
+  <rect x="250" y="140" width="195" height="80" rx="8" fill="url(#sourcesGrad)" stroke="#0284C7" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="347" y="170" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#075985" text-anchor="middle">Sentinel-5P TROPOMI</text>
+  <text x="347" y="190" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#0EA5E9" text-anchor="middle">Satellite Columns</text>
+  <text x="347" y="208" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#64748B" text-anchor="middle">NO₂, HCHO, O₃, CO, SO₂</text>
+
+  <!-- Arrow CPCB → TROPOMI (implied no line needed) -->
+
+  <!-- INSAT -->
+  <rect x="40" y="240" width="195" height="80" rx="8" fill="url(#sourcesGrad)" stroke="#0284C7" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="137" y="270" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#075985" text-anchor="middle">INSAT-3D</text>
+  <text x="137" y="290" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#0EA5E9" text-anchor="middle">Aerosol Optical Depth</text>
+  <text x="137" y="308" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#64748B" text-anchor="middle">550 nm AOD</text>
+
+  <!-- ERA5 -->
+  <rect x="250" y="240" width="195" height="80" rx="8" fill="url(#sourcesGrad)" stroke="#0284C7" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="347" y="270" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#075985" text-anchor="middle">ERA5 Reanalysis</text>
+  <text x="347" y="290" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#0EA5E9" text-anchor="middle">Meteorological</text>
+  <text x="347" y="308" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#64748B" text-anchor="middle">T, RH, U/V, TP, SP, BLH</text>
+
+  <!-- FIRMS -->
+  <rect x="145" y="340" width="195" height="80" rx="8" fill="url(#sourcesGrad)" stroke="#0284C7" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="242" y="370" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#075985" text-anchor="middle">NASA FIRMS / VIIRS</text>
+  <text x="242" y="390" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#0EA5E9" text-anchor="middle">Fire Detection</text>
+  <text x="242" y="408" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#64748B" text-anchor="middle">Fire pixel counts</text>
+
+  <!-- ==================== ARROWS: Sources → Processing ==================== -->
+  <line x1="448" y1="180" x2="530" y2="180" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="448" y1="260" x2="530" y2="260" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="340" y1="370" x2="530" y2="370" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ==================== ROW 2: PROCESSING ==================== -->
+  <!-- 0.1° Grid -->
+  <rect x="540" y="145" width="220" height="55" rx="8" fill="url(#processGrad)" stroke="#16A34A" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="650" y="168" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#166534" text-anchor="middle">0.1° India Grid</text>
+  <text x="650" y="188" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#22C55E" text-anchor="middle">Grid snap all datasets</text>
+
+  <!-- Dataset Builder AQI -->
+  <rect x="540" y="215" width="220" height="65" rx="8" fill="url(#processGrad)" stroke="#16A34A" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="650" y="240" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#166534" text-anchor="middle">AQI Dataset Builder</text>
+  <text x="650" y="258" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#22C55E" text-anchor="middle">build_dataset_aqi.py</text>
+  <text x="650" y="273" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#64748B" text-anchor="middle">Join all sources → training CSV</text>
+
+  <!-- Dataset Builder HCHO -->
+  <rect x="540" y="300" width="220" height="65" rx="8" fill="url(#processGrad)" stroke="#16A34A" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="650" y="325" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#166534" text-anchor="middle">HCHO Dataset Builder</text>
+  <text x="650" y="343" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#22C55E" text-anchor="middle">build_dataset_hcho.py</text>
+  <text x="650" y="358" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#64748B" text-anchor="middle">HCHO + Fire + Wind data</text>
+
+  <!-- Feature Engineering AQI -->
+  <rect x="780" y="195" width="220" height="65" rx="8" fill="url(#processGrad)" stroke="#16A34A" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="890" y="218" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#166534" text-anchor="middle">Feature Engineering</text>
+  <text x="890" y="236" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#22C55E" text-anchor="middle">make_features_aqi.py</text>
+  <text x="890" y="254" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#64748B" text-anchor="middle">Rolling means · Sin-cos cycles</text>
+  <text x="890" y="268" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#64748B" text-anchor="middle">3×3 spatial context · Scaling</text>
+
+  <!-- Feature Engineering HCHO -->
+  <rect x="780" y="300" width="220" height="65" rx="8" fill="url(#processGrad)" stroke="#16A34A" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="890" y="323" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#166534" text-anchor="middle">Feature Engineering</text>
+  <text x="890" y="341" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#22C55E" text-anchor="middle">make_features_hcho.py</text>
+  <text x="890" y="359" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#64748B" text-anchor="middle">HCHO anomaly · Persistence</text>
+  <text x="890" y="373" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#64748B" text-anchor="middle">DBSCAN · Wind transport</text>
+
+  <!-- Arrow AQI Dataset → Feature Eng -->
+  <path d="M 760 247 L 775 247" stroke="#888" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+
+  <!-- ==================== ARROWS: Processing → Models ==================== -->
+  <path d="M 1000 227 L 1060 227" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 1000 332 L 1060 332" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ==================== ROW 3: MODELS ==================== -->
+  <!-- RF / GBM -->
+  <rect x="1065" y="170" width="230" height="65" rx="8" fill="url(#modelGrad)" stroke="#CA8A04" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="1180" y="195" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#854D0E" text-anchor="middle">Baseline ML Models</text>
+  <text x="1180" y="213" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#CA8A04" text-anchor="middle">baseline_ml.py</text>
+  <text x="1180" y="228" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#64748B" text-anchor="middle">Random Forest · Gradient Boosting</text>
+
+  <!-- CNN-LSTM -->
+  <rect x="1065" y="250" width="230" height="65" rx="8" fill="url(#modelGrad)" stroke="#CA8A04" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="1180" y="275" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#854D0E" text-anchor="middle">CNN-LSTM (V2)</text>
+  <text x="1180" y="293" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#CA8A04" text-anchor="middle">cnn_lstm_aqi.py</text>
+  <text x="1180" y="308" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#64748B" text-anchor="middle">Conv2D → LSTM → Dense → PM2.5</text>
+
+  <!-- ConvLSTM -->
+  <rect x="1065" y="330" width="230" height="65" rx="8" fill="url(#modelGrad)" stroke="#CA8A04" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="1180" y="355" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#854D0E" text-anchor="middle">ConvLSTM (V3)</text>
+  <text x="1180" y="373" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#CA8A04" text-anchor="middle">cnn_lstm_aqi.py</text>
+  <text x="1180" y="388" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#64748B" text-anchor="middle">ConvLSTMCell · Spatiotemporal</text>
+
+  <!-- HCHO Detection -->
+  <rect x="1065" y="420" width="230" height="75" rx="8" fill="url(#modelGrad)" stroke="#CA8A04" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="1180" y="443" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#854D0E" text-anchor="middle">HCHO Hotspot Detection</text>
+  <text x="1180" y="461" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#CA8A04" text-anchor="middle">make_features_hcho.py</text>
+  <text x="1180" y="478" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#64748B" text-anchor="middle">90th-pct thresholding · DBSCAN</text>
+  <text x="1180" y="493" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#64748B" text-anchor="middle">Fire-HCHO correlation · Wind transport</text>
+
+  <!-- ==================== ARROWS: Models → Output ==================== -->
+  <path d="M 1295 202 L 1370 202" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 1295 282 L 1370 282" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 1295 362 L 1370 362" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 1295 457 L 1370 457" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ==================== ROW 4: OUTPUT ==================== -->
+  <!-- Gridded Predictions -->
+  <rect x="1380" y="145" width="240" height="70" rx="8" fill="url(#outputGrad)" stroke="#EA580C" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="1500" y="168" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#9A3412" text-anchor="middle">Gridded AQI Predictions</text>
+  <text x="1500" y="186" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#EA580C" text-anchor="middle">export_predictions_grid.py</text>
+  <text x="1500" y="204" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#64748B" text-anchor="middle">NetCDF · GeoTIFF · GeoJSON</text>
+
+  <!-- HCHO Outputs -->
+  <rect x="1380" y="235" width="240" height="70" rx="8" fill="url(#outputGrad)" stroke="#EA580C" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="1500" y="258" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#9A3412" text-anchor="middle">HCHO Hotspot Products</text>
+  <text x="1500" y="276" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#EA580C" text-anchor="middle">make_features_hcho.py</text>
+  <text x="1500" y="294" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#64748B" text-anchor="middle">Cluster GeoJSON · Top-N regions CSV</text>
+
+  <!-- STREAMLIT DASHBOARD -->
+  <rect x="1380" y="340" width="240" height="85" rx="10" fill="#1E3A5F" stroke="#0F172A" stroke-width="2" filter="url(#shadowLg)"/>
+  <text x="1500" y="368" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Streamlit Dashboard</text>
+  <text x="1500" y="390" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#93C5FD" text-anchor="middle">src/webapp/app.py</text>
+  <text x="1500" y="408" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#BFDBFE" text-anchor="middle">AQI Maps · HCHO Hotspots</text>
+  <text x="1500" y="422" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#BFDBFE" text-anchor="middle">Time Series · Seasonal Analysis</text>
+
+  <!-- Arrow to Dashboard -->
+  <line x1="1500" y1="305" x2="1500" y2="338" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ==================== BOTTOM SECTION: ORCHESTRATION & CONFIG ==================== -->
+  <rect x="40" y="470" width="1920" height="60" fill="none"/>
+  <rect x="40" y="470" width="1920" height="50" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="60" y="497" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#334155">Pipeline Orchestration:</text>
+  <text x="270" y="497" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#64748B">scripts/run_pipeline.py (download_all → build_datasets → train_baseline → train_deep → export_for_dashboard)</text>
+  <text x="60" y="514" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#334155">Config: paths.yaml · aqi_training.yaml · hcho_hotspot.yaml</text>
+  <text x="600" y="514" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#334155">Training: 2019–2021 (train) / 2022 (test) · 0.1° grid · India bbox: 68–97.5°E, 8–37.5°N</text>
+
+  <!-- ==================== LEGEND ==================== -->
+  <rect x="40" y="540" width="440" height="105" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1" filter="url(#shadow)"/>
+  <text x="60" y="563" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#334155">Legend</text>
+  <rect x="60" y="575" width="16" height="16" rx="3" fill="url(#sourcesGrad)" stroke="#0284C7" stroke-width="1"/>
+  <text x="84" y="588" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#475569">Data Sources</text>
+  <rect x="200" y="575" width="16" height="16" rx="3" fill="url(#processGrad)" stroke="#16A34A" stroke-width="1"/>
+  <text x="224" y="588" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#475569">Processing &amp; Feature Eng.</text>
+  <rect x="60" y="600" width="16" height="16" rx="3" fill="url(#modelGrad)" stroke="#CA8A04" stroke-width="1"/>
+  <text x="84" y="613" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#475569">Models</text>
+  <rect x="200" y="600" width="16" height="16" rx="3" fill="url(#outputGrad)" stroke="#EA580C" stroke-width="1"/>
+  <text x="224" y="613" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#475569">Outputs</text>
+
+  <!-- Footer -->
+  <text x="960" y="1070" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle">ISRO Smart India Hackathon 2024 — Surface AQI &amp; HCHO Hotspot Detection using Satellite Data</text>
+</svg>

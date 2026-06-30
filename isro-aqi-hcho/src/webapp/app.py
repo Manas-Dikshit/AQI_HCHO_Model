@@ -444,6 +444,7 @@ elif page == "AQI Maps":
     """)
 
     col_ctrl1, col_ctrl2 = st.columns([1, 3])
+    _interactive_map = None
     with col_ctrl1:
         layer = st.selectbox(
             "Layer",
@@ -515,15 +516,15 @@ elif page == "AQI Maps":
                             continue
                         folium.CircleMarker(
                             location=[r["lat"], r["lon"]],
-                            radius=3,
-                            color=aqi_color(aqi),
+                            radius=7,
+                            weight=1,
+                            color="#333333",
                             fill=True,
                             fillColor=aqi_color(aqi),
-                            fillOpacity=0.8,
+                            fillOpacity=0.9,
                             popup=f"AQI: {aqi:.0f}",
+                            tooltip=f"AQI {aqi:.0f}",
                         ).add_to(fg_aqi)
-
-                    fg_aqi.add_to(m)
 
                     # HCHO hotspots overlay (seasonal threshold)
                     if hcho_df is not None:
@@ -541,22 +542,28 @@ elif page == "AQI Maps":
                             for _, hr in hotspots.iterrows():
                                 folium.CircleMarker(
                                     location=[hr["lat"], hr["lon"]],
-                                    radius=6,
+                                    radius=11,
                                     color="blue",
-                                    fill=True,
-                                    fillColor="blue",
-                                    fillOpacity=0.4,
+                                    weight=2,
+                                    fill=False,
                                     popup=f"HCHO: {hr['hcho_column']:.2e}",
                                 ).add_to(fg_h)
                             fg_h.add_to(m)
 
+                    # AQI points added last so every surface point sits on top
+                    fg_aqi.add_to(m)
                     folium.LayerControl().add_to(m)
-                    st_folium(m, width=900, height=600)
+                    # Defer rendering to the wide column (col_ctrl2) for full width
+                    _interactive_map = m
 
     day_df_download = None
 
     with col_ctrl2:
-        if layer == "Predicted AQI (gridded)" and grid_df is not None:
+        if layer == "Interactive Main Map":
+            if _interactive_map is not None:
+                from streamlit_folium import st_folium
+                st_folium(_interactive_map, use_container_width=True, height=650)
+        elif layer == "Predicted AQI (gridded)" and grid_df is not None:
             # Prefer NetCDF-backed raster overlay if available for better visual fidelity
             nc_p = DATA_DIR / "predicted_aqi_grids" / "predicted_pm25.nc"
             if nc_p.exists():
@@ -601,7 +608,7 @@ elif page == "AQI Maps":
                     g = folium.Map(location=[22.0, 82.0], zoom_start=5, tiles="CartoDB positron")
                     folium.raster_layers.ImageOverlay(image=data_uri, bounds=[[lat_min, lon_min], [lat_max, lon_max]], opacity=0.7, name="Predicted PM2.5").add_to(g)
                     folium.LayerControl().add_to(g)
-                    st_folium(g, width=900, height=600)
+                    st_folium(g, use_container_width=True, height=650)
                 except Exception as exc:  # fallback to scatter when raster rendering fails
                     st.warning(f"Failed to render NetCDF raster: {exc}. Falling back to scatter map.")
                     from src.utils.aqi_calculator import compute_aqi_series
@@ -663,7 +670,7 @@ elif page == "AQI Maps":
 
                 g = folium.Map(location=[22.0, 82.0], zoom_start=5, tiles="CartoDB positron")
                 folium.GeoJson(str(geojson_p), name="AQI").add_to(g)
-                st_folium(g, width=900, height=600)
+                st_folium(g, use_container_width=True, height=650)
             else:
                 st.warning("Coarse GeoJSON not found. Run `export_for_dashboard` to generate it.")
 

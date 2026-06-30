@@ -1,0 +1,322 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <marker id="arr-d" markerWidth="7" markerHeight="5" refX="3.5" refY="5" orient="auto">
+      <polygon points="0,0 7,0 3.5,5" fill="#64748B"/>
+    </marker>
+    <marker id="arr-r" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0,0 7,2.5 0,5" fill="#64748B"/>
+    </marker>
+    <marker id="arr-d-blue" markerWidth="7" markerHeight="5" refX="3.5" refY="5" orient="auto">
+      <polygon points="0,0 7,0 3.5,5" fill="#2563EB"/>
+    </marker>
+    <marker id="arr-r-blue" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0,0 7,2.5 0,5" fill="#2563EB"/>
+    </marker>
+    <marker id="arr-d-red" markerWidth="7" markerHeight="5" refX="3.5" refY="5" orient="auto">
+      <polygon points="0,0 7,0 3.5,5" fill="#DC2626"/>
+    </marker>
+    <marker id="arr-r-red" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0,0 7,2.5 0,5" fill="#DC2626"/>
+    </marker>
+    <marker id="arr-d-purple" markerWidth="7" markerHeight="5" refX="3.5" refY="5" orient="auto">
+      <polygon points="0,0 7,0 3.5,5" fill="#7C3AED"/>
+    </marker>
+    <filter id="sh" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="1" dy="1.5" stdDeviation="1.5" flood-color="#00000014"/>
+    </filter>
+    <filter id="sh-lg" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="1.5" dy="2.5" stdDeviation="3" flood-color="#00000018"/>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <rect x="0" y="0" width="1920" height="62" fill="#1E3A5F"/>
+  <text x="960" y="39" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="bold" fill="#FFF" text-anchor="middle" letter-spacing="1">End-to-End Process Flow — Surface AQI Prediction &amp; HCHO Hotspot Detection</text>
+
+  <!-- ===== LEFT PANEL: Stages 1–4 (compact vertical) ===== -->
+  <!-- Each stage: header (30px) + boxes (variable) + arrow (18px) -->
+
+  <!-- STAGE 1 -->
+  <rect x="40" y="80" width="380" height="28" rx="5" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="230" y="99" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="bold" fill="#1E40AF" text-anchor="middle">STAGE 1  ·  Data Collection</text>
+
+  <rect x="40" y="115" width="185" height="38" rx="4" fill="#FFF" stroke="#93C5FD" stroke-width="1" filter="url(#sh)"/>
+  <text x="132" y="130" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#1E40AF" text-anchor="middle">CPCB CAAQM</text>
+  <text x="132" y="146" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B" text-anchor="middle">Ground PM₂.₅, NO₂, SO₂</text>
+
+  <rect x="235" y="115" width="185" height="38" rx="4" fill="#FFF" stroke="#93C5FD" stroke-width="1" filter="url(#sh)"/>
+  <text x="327" y="130" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#1E40AF" text-anchor="middle">Sentinel-5P TROPOMI</text>
+  <text x="327" y="146" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B" text-anchor="middle">NO₂, HCHO, O₃, CO, SO₂</text>
+
+  <rect x="40" y="160" width="185" height="38" rx="4" fill="#FFF" stroke="#93C5FD" stroke-width="1" filter="url(#sh)"/>
+  <text x="132" y="175" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#1E40AF" text-anchor="middle">INSAT-3D AOD</text>
+  <text x="132" y="191" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B" text-anchor="middle">550 nm Aerosol Optical Depth</text>
+
+  <rect x="235" y="160" width="185" height="38" rx="4" fill="#FFF" stroke="#93C5FD" stroke-width="1" filter="url(#sh)"/>
+  <text x="327" y="175" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#1E40AF" text-anchor="middle">ERA5 Reanalysis</text>
+  <text x="327" y="191" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B" text-anchor="middle">T, RH, U/V, TP, SP, BLH</text>
+
+  <rect x="40" y="205" width="380" height="38" rx="4" fill="#FFF" stroke="#93C5FD" stroke-width="1" filter="url(#sh)"/>
+  <text x="230" y="220" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#1E40AF" text-anchor="middle">NASA FIRMS / VIIRS</text>
+  <text x="230" y="236" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B" text-anchor="middle">Fire pixel counts · MODIS / VIIRS</text>
+
+  <rect x="40" y="250" width="380" height="28" rx="4" fill="#FFF" stroke="#93C5FD" stroke-width="1" filter="url(#sh)"/>
+  <text x="230" y="263" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#1E40AF" text-anchor="middle">Static Layers: Land cover · Elevation · Population</text>
+
+  <line x1="230" y1="282" x2="230" y2="298" stroke="#64748B" stroke-width="1.5" marker-end="url(#arr-d)"/>
+
+  <!-- STAGE 2 -->
+  <rect x="40" y="302" width="380" height="28" rx="5" fill="#CCFBF1" stroke="#14B8A6" stroke-width="1.5"/>
+  <text x="230" y="321" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="bold" fill="#0F766E" text-anchor="middle">STAGE 2  ·  Data Preprocessing</text>
+
+  <rect x="40" y="338" width="380" height="28" rx="4" fill="#FFF" stroke="#5EEAD4" stroke-width="1" filter="url(#sh)"/>
+  <text x="230" y="351" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#115E59" text-anchor="middle">Grid Aggregation — Snap all to 0.1° India grid (68–97.5°E, 8–37.5°N)</text>
+  <!-- only one line, no second line -->
+
+  <rect x="40" y="373" width="380" height="28" rx="4" fill="#FFF" stroke="#5EEAD4" stroke-width="1" filter="url(#sh)"/>
+  <text x="230" y="386" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#115E59" text-anchor="middle">Temporal Alignment · Quality Control — Daily resample, fill, outlier removal</text>
+
+  <line x1="230" y1="405" x2="230" y2="421" stroke="#64748B" stroke-width="1.5" marker-end="url(#arr-d)"/>
+
+  <!-- STAGE 3 -->
+  <rect x="40" y="425" width="380" height="28" rx="5" fill="#DCFCE7" stroke="#4ADE80" stroke-width="1.5"/>
+  <text x="230" y="444" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="bold" fill="#15803D" text-anchor="middle">STAGE 3  ·  Feature Engineering</text>
+
+  <rect x="40" y="460" width="380" height="36" rx="4" fill="#FFF" stroke="#86EFAC" stroke-width="1" filter="url(#sh)"/>
+  <text x="230" y="474" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#166534" text-anchor="middle">AQI: Rolling means (3d/7d) · Sin-cos temporal cycles · 3×3 spatial context</text>
+  <text x="230" y="490" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B" text-anchor="middle">make_features_aqi.py</text>
+
+  <rect x="40" y="503" width="380" height="36" rx="4" fill="#FFF" stroke="#86EFAC" stroke-width="1" filter="url(#sh)"/>
+  <text x="230" y="517" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#166534" text-anchor="middle">HCHO: Z-score anomaly · Persistence · DBSCAN · Wind transport</text>
+  <text x="230" y="533" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B" text-anchor="middle">make_features_hcho.py</text>
+
+  <line x1="230" y1="543" x2="230" y2="559" stroke="#64748B" stroke-width="1.5" marker-end="url(#arr-d)"/>
+
+  <!-- STAGE 4 -->
+  <rect x="40" y="563" width="380" height="28" rx="5" fill="#FEF3C7" stroke="#FBBF24" stroke-width="1.5"/>
+  <text x="230" y="582" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="bold" fill="#B45309" text-anchor="middle">STAGE 4  ·  Model Training</text>
+
+  <rect x="40" y="598" width="380" height="32" rx="4" fill="#FFF" stroke="#FCD34D" stroke-width="1" filter="url(#sh)"/>
+  <text x="230" y="613" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#92400E" text-anchor="middle">Baseline ML: Random Forest · Gradient Boosting (GridSearchCV)</text>
+  <text x="230" y="625" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B" text-anchor="middle">baseline_ml.py → joblib</text>
+
+  <rect x="40" y="637" width="380" height="32" rx="4" fill="#FFF" stroke="#FCD34D" stroke-width="1" filter="url(#sh)"/>
+  <text x="230" y="652" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#92400E" text-anchor="middle">Deep Learning: CNN-LSTM (V2) · ConvLSTM (V3) — PyTorch</text>
+  <text x="230" y="664" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B" text-anchor="middle">cnn_lstm_aqi.py → .pt checkpoints</text>
+
+  <rect x="40" y="676" width="380" height="28" rx="4" fill="#FFF" stroke="#FCD34D" stroke-width="1" filter="url(#sh)"/>
+  <text x="230" y="694" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#92400E" text-anchor="middle">Train: 2019-2021  ·  Test: 2022  (no temporal leakage)</text>
+
+  <!-- ===== ARROW from Stage 4 (bottom) to Track A (AQI, center) ===== -->
+  <path d="M 420 708 C 460 708, 460 236, 485 236" stroke="#2563EB" stroke-width="2" fill="none" marker-end="url(#arr-r-blue)"/>
+
+  <!-- ===== ARROW from Stage 3 (bottom) to Track B (header) ===== -->
+  <line x1="420" y1="543" x2="485" y2="543" stroke="#DC2626" stroke-width="2" marker-end="url(#arr-r-red)"/>
+
+  <line x1="485" y1="543" x2="485" y2="572" stroke="#DC2626" stroke-width="2" marker-end="url(#arr-d-red)"/>
+  <!-- ===== RIGHT PANEL TOP: Track A (AQI) ===== -->
+  <rect x="490" y="80" width="530" height="30" rx="5" fill="#2563EB"/>
+  <text x="755" y="100" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" fill="#FFF" text-anchor="middle">TRACK A: AQI Prediction Pipeline</text>
+
+  <!-- Step 1 -->
+  <rect x="490" y="118" width="530" height="36" rx="5" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1" filter="url(#sh)"/>
+  <circle cx="510" cy="136" r="10" fill="#2563EB"/>
+  <text x="510" y="140" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#FFF" text-anchor="middle">1</text>
+  <text x="528" y="133" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#1E3A5F">Model Training</text>
+  <text x="528" y="148" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B">RF / GBM / CNN-LSTM trained on station-joined gridded data</text>
+
+  <line x1="755" y1="154" x2="755" y2="164" stroke="#93C5FD" stroke-width="1.5" marker-end="url(#arr-d)"/>
+
+  <!-- Step 2 -->
+  <rect x="490" y="168" width="530" height="36" rx="5" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1" filter="url(#sh)"/>
+  <circle cx="510" cy="186" r="10" fill="#2563EB"/>
+  <text x="510" y="190" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#FFF" text-anchor="middle">2</text>
+  <text x="528" y="183" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#1E3A5F">Hyperparameter Tuning</text>
+  <text x="528" y="198" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B">GridSearch · ReduceLROnPlateau · Early stopping (patience=10)</text>
+
+  <line x1="755" y1="204" x2="755" y2="214" stroke="#93C5FD" stroke-width="1.5" marker-end="url(#arr-d)"/>
+
+  <!-- Step 3 -->
+  <rect x="490" y="218" width="530" height="36" rx="5" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1" filter="url(#sh)"/>
+  <circle cx="510" cy="236" r="10" fill="#2563EB"/>
+  <text x="510" y="240" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#FFF" text-anchor="middle">3</text>
+  <text x="528" y="233" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#1E3A5F">Model Evaluation</text>
+  <text x="528" y="248" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B">R² · RMSE · MAE · Scatter plots · Time-series validation</text>
+
+  <line x1="755" y1="254" x2="755" y2="264" stroke="#93C5FD" stroke-width="1.5" marker-end="url(#arr-d)"/>
+
+  <!-- Step 4 -->
+  <rect x="490" y="268" width="530" height="36" rx="5" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1" filter="url(#sh)"/>
+  <circle cx="510" cy="286" r="10" fill="#2563EB"/>
+  <text x="510" y="290" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#FFF" text-anchor="middle">4</text>
+  <text x="528" y="283" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#1E3A5F">Full-Grid Inference</text>
+  <text x="528" y="298" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B">Predict PM₂.₅ over all 0.1° India grid cells (tiling approach)</text>
+
+  <line x1="755" y1="304" x2="755" y2="314" stroke="#93C5FD" stroke-width="1.5" marker-end="url(#arr-d)"/>
+
+  <!-- Step 5 -->
+  <rect x="490" y="318" width="530" height="36" rx="5" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1" filter="url(#sh)"/>
+  <circle cx="510" cy="336" r="10" fill="#2563EB"/>
+  <text x="510" y="340" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#FFF" text-anchor="middle">5</text>
+  <text x="528" y="333" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#1E3A5F">AQI Conversion</text>
+  <text x="528" y="348" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B">CPCB Indian AQI formula · PM₂.₅ → AQI category · Export NetCDF/GeoTIFF/GeoJSON</text>
+
+  <!-- ===== RIGHT PANEL BOTTOM: Track B (HCHO) ===== -->
+  <rect x="490" y="555" width="530" height="30" rx="5" fill="#DC2626"/>
+  <text x="755" y="575" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" fill="#FFF" text-anchor="middle">TRACK B: HCHO Hotspot Pipeline</text>
+
+  <!-- Step 1 -->
+  <rect x="490" y="593" width="530" height="36" rx="5" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1" filter="url(#sh)"/>
+  <circle cx="510" cy="611" r="10" fill="#DC2626"/>
+  <text x="510" y="615" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#FFF" text-anchor="middle">1</text>
+  <text x="528" y="608" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#7F1D1D">HCHO + Fire Data Fusion</text>
+  <text x="528" y="623" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B">Join TROPOMI HCHO columns with FIRMS fire counts</text>
+
+  <line x1="755" y1="629" x2="755" y2="639" stroke="#FCA5A5" stroke-width="1.5" marker-end="url(#arr-d)"/>
+
+  <!-- Step 2 -->
+  <rect x="490" y="643" width="530" height="36" rx="5" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1" filter="url(#sh)"/>
+  <circle cx="510" cy="661" r="10" fill="#DC2626"/>
+  <text x="510" y="665" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#FFF" text-anchor="middle">2</text>
+  <text x="528" y="658" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#7F1D1D">Hotspot Thresholding</text>
+  <text x="528" y="673" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B">90th-percentile anomaly flagging · Z-score threshold</text>
+
+  <line x1="755" y1="679" x2="755" y2="689" stroke="#FCA5A5" stroke-width="1.5" marker-end="url(#arr-d)"/>
+
+  <!-- Step 3 -->
+  <rect x="490" y="693" width="530" height="36" rx="5" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1" filter="url(#sh)"/>
+  <circle cx="510" cy="711" r="10" fill="#DC2626"/>
+  <text x="510" y="715" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#FFF" text-anchor="middle">3</text>
+  <text x="528" y="708" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#7F1D1D">DBSCAN Clustering</text>
+  <text x="528" y="723" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B">Spatial cluster identification · Persistence (consecutive days)</text>
+
+  <line x1="755" y1="729" x2="755" y2="739" stroke="#FCA5A5" stroke-width="1.5" marker-end="url(#arr-d)"/>
+
+  <!-- Step 4 -->
+  <rect x="490" y="743" width="530" height="36" rx="5" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1" filter="url(#sh)"/>
+  <circle cx="510" cy="761" r="10" fill="#DC2626"/>
+  <text x="510" y="765" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#FFF" text-anchor="middle">4</text>
+  <text x="528" y="758" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#7F1D1D">Wind Transport Analysis</text>
+  <text x="528" y="773" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B">Wind quiver overlays · Transport trajectory mapping</text>
+
+  <line x1="755" y1="779" x2="755" y2="789" stroke="#FCA5A5" stroke-width="1.5" marker-end="url(#arr-d)"/>
+
+  <!-- Step 5 -->
+  <rect x="490" y="793" width="530" height="36" rx="5" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1" filter="url(#sh)"/>
+  <circle cx="510" cy="811" r="10" fill="#DC2626"/>
+  <text x="510" y="815" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#FFF" text-anchor="middle">5</text>
+  <text x="528" y="808" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#7F1D1D">Export Hotspot Products</text>
+  <text x="528" y="823" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B">Cluster GeoJSON · Top-N hotspot regions CSV</text>
+
+  <!-- ===== MERGE ARROWS to Output ===== -->
+  <path d="M 1022 336 L 1080 336 L 1080 365" stroke="#64748B" stroke-width="1.5" fill="none" marker-end="url(#arr-d)"/>
+  <path d="M 1022 811 L 1080 811 L 1080 820" stroke="#64748B" stroke-width="1.5" fill="none" marker-end="url(#arr-d)"/>
+
+  <!-- ===== RIGHT PANEL: Output & Dashboard ===== -->
+  <rect x="1090" y="80" width="790" height="30" rx="5" fill="#7C3AED"/>
+  <text x="1485" y="100" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" fill="#FFF" text-anchor="middle">STAGE 5–6: Output Generation &amp; Dashboard</text>
+
+  <!-- Output row of 4 boxes -->
+  <rect x="1090" y="120" width="187" height="48" rx="4" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1" filter="url(#sh)"/>
+  <text x="1183" y="138" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#5B21B6" text-anchor="middle">AQI Grid Outputs</text>
+  <text x="1183" y="156" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B" text-anchor="middle">NetCDF · GeoTIFF · GeoJSON</text>
+
+  <rect x="1291" y="120" width="187" height="48" rx="4" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1" filter="url(#sh)"/>
+  <text x="1384" y="138" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#5B21B6" text-anchor="middle">HCHO Outputs</text>
+  <text x="1384" y="156" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B" text-anchor="middle">Cluster GeoJSON · Top-N CSV</text>
+
+  <rect x="1492" y="120" width="187" height="48" rx="4" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1" filter="url(#sh)"/>
+  <text x="1585" y="138" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#5B21B6" text-anchor="middle">Model Artifacts</text>
+  <text x="1585" y="156" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B" text-anchor="middle">.pt checkpoints · .joblib</text>
+
+  <rect x="1693" y="120" width="187" height="48" rx="4" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1" filter="url(#sh)"/>
+  <text x="1786" y="138" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#5B21B6" text-anchor="middle">Metrics &amp; Reports</text>
+  <text x="1786" y="156" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#64748B" text-anchor="middle">Eval plots · Importance</text>
+
+  <line x1="1485" y1="170" x2="1485" y2="186" stroke="#7C3AED" stroke-width="2" marker-end="url(#arr-d-purple)"/>
+
+  <!-- Dashboard section -->
+  <rect x="1090" y="192" width="790" height="38" rx="6" fill="#1E3A5F" stroke="#0F172A" stroke-width="1.5" filter="url(#sh-lg)"/>
+  <text x="1485" y="216" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" fill="#FFF" text-anchor="middle">Streamlit Dashboard — 7 Interactive Pages (src/webapp/app.py)</text>
+
+  <!-- 7 dashboard page tiles -->
+  <rect x="1090" y="240" width="106" height="36" rx="4" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1" filter="url(#sh)"/>
+  <text x="1143" y="256" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#1E40AF" text-anchor="middle">AQI Maps</text>
+  <text x="1143" y="270" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Gridded + choropleth</text>
+
+  <rect x="1204" y="240" width="106" height="36" rx="4" fill="#FFF7ED" stroke="#F97316" stroke-width="1" filter="url(#sh)"/>
+  <text x="1257" y="256" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#9A3412" text-anchor="middle">HCHO Maps</text>
+  <text x="1257" y="270" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Clusters + quivers</text>
+
+  <rect x="1318" y="240" width="106" height="36" rx="4" fill="#F0FDF4" stroke="#22C55E" stroke-width="1" filter="url(#sh)"/>
+  <text x="1371" y="256" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#15803D" text-anchor="middle">Time Series</text>
+  <text x="1371" y="270" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">City + regional plots</text>
+
+  <rect x="1432" y="240" width="106" height="36" rx="4" fill="#FEFCE8" stroke="#EAB308" stroke-width="1" filter="url(#sh)"/>
+  <text x="1485" y="256" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#854D0E" text-anchor="middle">Performance</text>
+  <text x="1485" y="270" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Metrics + importance</text>
+
+  <rect x="1546" y="240" width="106" height="36" rx="4" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="1" filter="url(#sh)"/>
+  <text x="1599" y="256" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#5B21B6" text-anchor="middle">Seasonal</text>
+  <text x="1599" y="270" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">IMD convention</text>
+
+  <rect x="1660" y="240" width="106" height="36" rx="4" fill="#FEF2F2" stroke="#EF4444" stroke-width="1" filter="url(#sh)"/>
+  <text x="1713" y="256" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#991B1B" text-anchor="middle">Explorer</text>
+  <text x="1713" y="270" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Raw data viewer</text>
+
+  <rect x="1774" y="240" width="106" height="36" rx="4" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1" filter="url(#sh)"/>
+  <text x="1827" y="256" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#475569" text-anchor="middle">About</text>
+  <text x="1827" y="270" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Help + references</text>
+
+  <line x1="1485" y1="280" x2="1485" y2="296" stroke="#7C3AED" stroke-width="2" marker-end="url(#arr-d-purple)"/>
+
+  <!-- Data source note -->
+  <rect x="1090" y="302" width="790" height="28" rx="4" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1" filter="url(#sh)"/>
+  <text x="1485" y="320" font-family="Arial,Helvetica,sans-serif" font-size="10" fill="#475569" text-anchor="middle">Data Source: CSV / NetCDF / GeoJSON files in data/processed/</text>
+
+  <!-- ===== BOTTOM FULL-WIDTH INFO ===== -->
+  <rect x="40" y="860" width="1840" height="44" rx="6" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1" filter="url(#sh)"/>
+  <text x="960" y="878" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#1E3A5F" text-anchor="middle">Pipeline Orchestration: scripts/run_pipeline.py</text>
+  <text x="960" y="895" font-family="Arial,Helvetica,sans-serif" font-size="10" fill="#64748B" text-anchor="middle">download_all → build_datasets → train_baseline → train_deep → export_for_dashboard</text>
+
+  <!-- Config & Decisions -->
+  <rect x="40" y="915" width="1840" height="60" rx="6" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1" filter="url(#sh)"/>
+  <text x="960" y="933" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#1E3A5F" text-anchor="middle">Key Design Decisions</text>
+  <text x="60" y="949" font-family="Arial,Helvetica,sans-serif" font-size="10" fill="#475569">• 0.1° regular grid over India (68–97.5°E, 8–37.5°N)</text>
+  <text x="680" y="949" font-family="Arial,Helvetica,sans-serif" font-size="10" fill="#475569">• Temporal split: 2019–2021 (train) / 2022 (test)</text>
+  <text x="1320" y="949" font-family="Arial,Helvetica,sans-serif" font-size="10" fill="#475569">• Synthetic fallback for demo mode</text>
+  <text x="60" y="966" font-family="Arial,Helvetica,sans-serif" font-size="10" fill="#475569">• Config-driven: paths.yaml · aqi_training.yaml · hcho_hotspot.yaml</text>
+  <text x="680" y="966" font-family="Arial,Helvetica,sans-serif" font-size="10" fill="#475569">• Model factory: build_model(config) → CNN-LSTM / ConvLSTM</text>
+  <text x="1320" y="966" font-family="Arial,Helvetica,sans-serif" font-size="10" fill="#475569">• CPCB Indian AQI formula for PM₂.₅ → AQI category</text>
+
+  <!-- Legend -->
+  <rect x="40" y="990" width="1840" height="36" rx="6" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="60" y="1012" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#1E3A5F">Legend:</text>
+
+  <rect x="140" y="1000" width="14" height="14" rx="3" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1"/>
+  <text x="160" y="1012" font-family="Arial,Helvetica,sans-serif" font-size="10" fill="#475569">Stage 1</text>
+
+  <rect x="230" y="1000" width="14" height="14" rx="3" fill="#CCFBF1" stroke="#14B8A6" stroke-width="1"/>
+  <text x="250" y="1012" font-family="Arial,Helvetica,sans-serif" font-size="10" fill="#475569">Stage 2</text>
+
+  <rect x="320" y="1000" width="14" height="14" rx="3" fill="#DCFCE7" stroke="#4ADE80" stroke-width="1"/>
+  <text x="340" y="1012" font-family="Arial,Helvetica,sans-serif" font-size="10" fill="#475569">Stage 3</text>
+
+  <rect x="420" y="1000" width="14" height="14" rx="3" fill="#FEF3C7" stroke="#FBBF24" stroke-width="1"/>
+  <text x="440" y="1012" font-family="Arial,Helvetica,sans-serif" font-size="10" fill="#475569">Stage 4</text>
+
+  <rect x="530" y="1000" width="14" height="14" rx="3" fill="#EFF6FF" stroke="#2563EB" stroke-width="1"/>
+  <text x="550" y="1012" font-family="Arial,Helvetica,sans-serif" font-size="10" fill="#475569">Track A (AQI)</text>
+
+  <rect x="650" y="1000" width="14" height="14" rx="3" fill="#FEF2F2" stroke="#DC2626" stroke-width="1"/>
+  <text x="670" y="1012" font-family="Arial,Helvetica,sans-serif" font-size="10" fill="#475569">Track B (HCHO)</text>
+
+  <rect x="790" y="1000" width="14" height="14" rx="3" fill="#F5F3FF" stroke="#7C3AED" stroke-width="1"/>
+  <text x="810" y="1012" font-family="Arial,Helvetica,sans-serif" font-size="10" fill="#475569">Output / Dashboard</text>
+
+  <!-- Footer -->
+  <text x="960" y="1050" font-family="Arial,Helvetica,sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle" letter-spacing="0.5">ISRO Smart India Hackathon 2024 — Surface AQI Prediction &amp; HCHO Hotspot Detection using Satellite Data</text>
+
+</svg>
